@@ -1,4 +1,4 @@
-import { NumberInput } from '@mantine/core'
+import { NumberInput } from '@mantine/core';
 
 interface ItemPriceInputProps {
   value: number | string
@@ -18,5 +18,5 @@ export default function ItemPriceInput({ value, onChange }: ItemPriceInputProps)
       clampBehavior="strict"
       prefix="$"
     />
-  )
+  );
 }
