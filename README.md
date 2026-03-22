@@ -1,46 +1,41 @@
-# React + TypeScript + Vite
+# Foodstuffs Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a submission for the Foodstuffs "Software Engineer - Technical Exercise".
 
-Currently, two official plugins are available:
+It is a retail price calculator for New Zealand regions with tiered discount rates and region-specific tax rates.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- React 19 + TypeScript 5.9
+- Vite 8 (build tool / dev server)
+- Mantine 8 (UI component library)
+- Vitest (unit testing)
+- ESLint (linting)
+- PostCSS (styling with Mantine preset)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Running Locally
 
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
+
+The app will be available at `http://localhost:5173`.
+
+### Other Scripts
+
+- `npm run build` — compile TypeScript and create a production build
+- `npm run preview` — preview the production build locally
+- `npm run test` — run unit tests
+- `npm run lint` — run ESLint
+
+## Notes
+
+Development notes documenting decisions and progress:
+
+- [note-1](notes/note-1.md) — Initial setup
+- [note-2](notes/note-2.md) — Subtotal calculation
+- [note-2_5](notes/note-2_5.md) — Removing unused validation
+- [note-3](notes/note-3.md) — Discount calculation
+- [note-4](notes/note-4.md) — Total (taxed) price calculation
+- [note-11](notes/note-11.md) - README update and tests check
