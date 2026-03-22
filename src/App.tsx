@@ -18,12 +18,12 @@ function App() {
           <ItemCountInput value={count} onChange={setCount} />
           <ItemPriceInput value={price} onChange={setPrice} />
           <Text size="lg" fw={700} mt="md">
-            Subtotal: ${subtotal.toFixed(2)}
+            Discounted Subtotal: ${(subtotal - amount).toFixed(2)}
           </Text>
         </div>
       </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
