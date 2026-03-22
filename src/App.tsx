@@ -1,14 +1,16 @@
-import { useState } from 'react'
-import { Text } from '@mantine/core'
-import ItemCountInput from './components/ItemCountInput/index.tsx'
-import ItemPriceInput from './components/ItemPriceInput/index.tsx'
-import { useSubtotal } from './hooks/useSubtotal.ts'
-import styles from './App.module.css'
+import { useState } from 'react';
+import { Text } from '@mantine/core';
+import ItemCountInput from './components/ItemCountInput/index.tsx';
+import ItemPriceInput from './components/ItemPriceInput/index.tsx';
+import { useSubtotal } from './hooks/useSubtotal.ts';
+import { useDiscount } from './hooks/useDiscount.ts';
+import styles from './App.module.css';
 
 function App() {
-  const [count, setCount] = useState<number | string>('')
-  const [price, setPrice] = useState<number | string>('')
-  const subtotal = useSubtotal(count, price)
+  const [count, setCount] = useState<number | string>('');
+  const [price, setPrice] = useState<number | string>('');
+  const subtotal = useSubtotal(count, price);
+  const { amount } = useDiscount(subtotal);
 
   return (
     <>

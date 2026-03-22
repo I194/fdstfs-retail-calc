@@ -1,4 +1,4 @@
-import { NumberInput } from '@mantine/core'
+import { NumberInput } from '@mantine/core';
 
 interface ItemCountInputProps {
   value: number | string
@@ -16,5 +16,5 @@ export default function ItemCountInput({ value, onChange }: ItemCountInputProps)
       allowDecimal={false}
       clampBehavior="strict"
     />
-  )
+  );
 }
