@@ -1,16 +1,12 @@
-import { useState } from 'react';
 import { Text } from '@mantine/core';
 import ItemCountInput from './components/ItemCountInput/index.tsx';
 import ItemPriceInput from './components/ItemPriceInput/index.tsx';
-import { useSubtotal } from './hooks/useSubtotal.ts';
-import { useDiscount } from './hooks/useDiscount.ts';
+import RegionSelect from './components/RegionSelect/index.tsx';
+import { useApp } from './hooks/useApp.ts';
 import styles from './App.module.css';
 
 function App() {
-  const [count, setCount] = useState<number | string>('');
-  const [price, setPrice] = useState<number | string>('');
-  const subtotal = useSubtotal(count, price);
-  const { amount } = useDiscount(subtotal);
+  const { count, setCount, price, setPrice, region, setRegion, total } = useApp();
 
   return (
     <>
@@ -19,8 +15,9 @@ function App() {
           <h1>Retail Calculator</h1>
           <ItemCountInput value={count} onChange={setCount} />
           <ItemPriceInput value={price} onChange={setPrice} />
+          <RegionSelect value={region} onChange={setRegion} />
           <Text size="lg" fw={700} mt="md">
-            Discounted Subtotal: ${(subtotal - amount).toFixed(2)}
+            Total: ${total.toFixed(2)}
           </Text>
         </div>
       </section>
